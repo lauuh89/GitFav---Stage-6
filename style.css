@@ -19,21 +19,19 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
+  transform: translateX(-20px);
 }
 
-::-webkit-scrollbar-track {
-  background: var(--scroll-background);
-  border-radius: 0 0 8px 0;
-}
+
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scroll-color);
+  background: rgba(74, 128, 140, 1);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scroll-color-hover);
+  background: rgb(49, 84, 92);
 }
 
 body {
@@ -113,6 +111,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  
 }
 
 table * {
@@ -125,6 +124,9 @@ table thead tr {
   justify-content: space-around;
   background: var(--table-head);
   border-radius: 12px 12px 0 0;
+  border-top: var(--primary-border);
+  border-left: var(--primary-border);
+  border-right: var(--primary-border);
 }
 
 table thead th {
@@ -136,9 +138,12 @@ table thead th {
 table tbody {
   display: block;
   width: 100%;
-  overflow: auto;
+  overflow: overlay;
   height: 300px;
   border-radius: 0 0 12px 12px;
+  border-bottom: var(--primary-border);
+  border-left: var(--primary-border);
+  border-right: var(--primary-border);
 }
 
 table tbody tr {
@@ -152,6 +157,8 @@ table tbody tr {
 /* par */
 table tbody tr:nth-child(even) {
   background: var(--tbody-primary);
+  border-top: var(--primary-border);
+  border-bottom: var(--primary-border);
 }
 
 /* ímpar */
