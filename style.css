@@ -93,6 +93,10 @@ header {
   color: #065e7c;
 }
 
+.search button:hover svg path {
+  fill: #065e7c;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
