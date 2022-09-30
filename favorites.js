@@ -66,15 +66,16 @@ export class FavoritesView extends Favorites {
     this.tbody = this.root.querySelector('table tbody')
 
     this.update()
-    this.onadd()
+    this.onAdd()
   }
 
-  onadd() {
-    const addButton = this.root.querySelector('.search button')
-    addButton.onclick = () => {
+  onAdd() {
+    const addForm = this.root.querySelector('.search')
+    addForm.onsubmit = e => {
+      e.preventDefault()
       const { value } = this.root.querySelector('.search input')
-
       this.add(value)
+      addForm.reset()
     }
   }
 
@@ -110,20 +111,18 @@ export class FavoritesView extends Favorites {
 
     tr.innerHTML = `
     <td class="user">
-      <img src="https://github.com/lauuh89.png" alt="Imagem de lauuh89">
-      <a href="https://github.com/lauuh89" target="_blank">
-        <p>Laureana Vanessa</p>
-        <span>lauuh89</span>
+      <img src="" alt="">
+      <a href="#" target="_blank">
+        <p></p>
+        <span></span>
       </a>
     </td>
     <td class="repositories">
-      76
     </td>
     <td class="followers">
-      9589
     </td>
     <td>
-      <button class="remove">Remover</button>
+      <button class="remove">remove</button>
     </td>
   `
 
@@ -136,4 +135,3 @@ export class FavoritesView extends Favorites {
     })
   }
 }
-
